@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 public class WorkDao {
+
     /**
      * 작업 저장
      *
@@ -13,14 +14,14 @@ public class WorkDao {
      *              - workNo가 있으면 수정, 없으면 추가
      * @return
      */
-    public boolean save(Work work){
+    public boolean save(Work work) {
         SqlSession sqlSession = DBConnection.getSession();
         long workNo = work.getWorkNo();
         int affectedRows = 0;
-        if(workNo > 0L){ // 수정
+        if (workNo > 0L) { // 수정
             affectedRows = sqlSession.update("WorkListMapper.edit", work);
-        }else {// 추가
-            affectedRows = sqlSession.insert("WorkListMapper.add",work);
+        } else { // 추가
+            affectedRows = sqlSession.insert("WorkListMapper.add", work);
         }
 
         sqlSession.commit();
@@ -34,7 +35,7 @@ public class WorkDao {
      * @param workNo
      * @return
      */
-    public boolean delete(long workNo){
+    public boolean delete(long workNo) {
         SqlSession sqlSession = DBConnection.getSession();
         Work params = new Work();
         params.setWorkNo(workNo);
@@ -48,10 +49,11 @@ public class WorkDao {
 
     /**
      * 개별 조회
+     *
      * @param workNo
      * @return
      */
-    public Work get(long workNo){
+    public Work get(long workNo) {
 
         Work params = new Work();
         params.setWorkNo(workNo);
@@ -65,11 +67,10 @@ public class WorkDao {
     /**
      * 목록 조회
      * @param work
-     *              - status, subject, content에 따라서 검색 조건 생성
+     *          - status, subject, content에 따라서 검색 조건 생성
      * @return
      */
-
-    public List<Work> gets(Work work){
+    public List<Work> gets(Work work) {
         SqlSession sqlSession = DBConnection.getSession();
 
         List<Work> items = sqlSession.selectList("WorkListMapper.list", work);
