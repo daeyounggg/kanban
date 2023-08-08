@@ -11,9 +11,9 @@
         <property name="password" value="aA!123456" />
     </properties>
     <typeHandlers>
-        <typeHandler handler="org.apache.ibatis.type.LocalDateTimeTypeHandler"/>
-        <typeHandler handler="org.apache.ibatis.type.LocalDateTypeHandler"/>
-        <typeHandler handler="org.apache.ibatis.type.LocalTimeTypeHandler"/>
+        <typeHandler handler="org.apache.ibatis.type.LocalDateTimeTypeHandler" />
+        <typeHandler handler="org.apache.ibatis.type.LocalDateTypeHandler" />
+        <typeHandler handler="org.apache.ibatis.type.LocalTimeTypeHandler" />
     </typeHandlers>
     <environments default="dev">
         <environment id="dev">
@@ -36,7 +36,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource ="mybatis/mapper/UserMapper.xml"/>
-        <mapper resource = "mybatis/mapper/WorkListMapper.xml"/>
+        <mapper resource="mybatis/mapper/UserMapper.xml" />
+        <mapper resource="mybatis/mapper/WorkListMapper.xml" />
     </mappers>
 </configuration>

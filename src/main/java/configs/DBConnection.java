@@ -25,7 +25,8 @@ public class DBConnection {
             e.printStackTrace();
         }
     }
-    public static SqlSession getSession(){
+
+    public static SqlSession getSession() {
         return sqlSessionFactory.openSession();
     }
 }

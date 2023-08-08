@@ -2,7 +2,7 @@ package models.works;
 
 public enum Status {
     READY,
-    PROGRASS,
+    PROGRESS,
     DONE,
     POSTPONE
 }
