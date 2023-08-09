@@ -7,6 +7,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import models.works.SaveService;
 import models.works.WorkServiceManager;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 public class SaveController implements Controller {
     @Override
     public void get(HttpServletRequest req, HttpServletResponse resp) {
@@ -26,8 +29,13 @@ public class SaveController implements Controller {
             saveService.save(req);
 
         }catch (Exception e){
-            System.out.println(e.getMessage());
-            e.printStackTrace();
+            try {
+                resp.setContentType("text/html;charset=UTF-8");
+                PrintWriter out = resp.getWriter();
+                out.printf("<script>alert('%s');</script>",e.getMessage());
+            }catch (IOException e2) {
+                e.printStackTrace();
+            }
         }
     }
 }
