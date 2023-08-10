@@ -11,6 +11,7 @@ import java.io.IOException;
 public class LoginController implements Controller  {
     public void get(HttpServletRequest req, HttpServletResponse resp) {
 
+        req.setAttribute("addCss",new String[] {"member/login"});
         ViewUtils.load(req, resp, "member", "login");
     }
 

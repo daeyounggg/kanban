@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## 칸반보드 만들기
 
 ## 1일차 
@@ -75,3 +76,8 @@
 * 기본 스타일 처리
 * 회원가입 양식 구성하기
 * 회원가입 처리하기
+  - 모델 구성
+  - models/member/JoinService.java : 가입
+  - models/member/Users.java
+  - models/member/UsersDao.java
+  - models/member/JoinValidator.java 
