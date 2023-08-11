@@ -20,7 +20,7 @@
                 <a href="${loginUrl}">
                     <i class="xi-log-in"></i>로그인
                 </a>
-                <a href="${loginUrl}">
+                <a href="${joinUrl}">
                     <i class="xi-user-plus"></i>회원가입
                 </a>
                 <a href="${workListUrl}">

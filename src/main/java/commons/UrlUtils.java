@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 public class UrlUtils {
     public static long getPatternData(HttpServletRequest req, String pattern){
         String URI = req.getRequestURI();
+        pattern = "edit/(\\d*)";
         Pattern p = Pattern.compile(pattern);
         Matcher matcher = p.matcher(URI);
         if (matcher.find()) {
