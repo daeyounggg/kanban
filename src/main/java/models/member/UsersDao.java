@@ -32,7 +32,7 @@ public class UsersDao {
         SqlSession sqlSession = DBConnection.getSession();
         UserForm params = new UserForm();
         params.setUserId(userId);
-        int cnt = sqlSession.selectOne("UsersMapper.exists", params);
+        int cnt = sqlSession.selectOne("UserMapper.exists", params);
 
         return cnt > 0;
     }

@@ -14,14 +14,15 @@ public class JoinService {
     }
 
     public void join(UserForm userForm){
-
+        System.out.println("여기1");
         // 유효성 검사
         validator.check(userForm);
-
+        System.out.println("여기2");
         // 유효성 검사 성공시 DB 처리
         if (!usersDao.register(userForm)){
             throw new JoinValidationException("회원가입 실패하였습니다.");
         }
+        System.out.println("여기3");
     }
 
     public void join(HttpServletRequest req){
