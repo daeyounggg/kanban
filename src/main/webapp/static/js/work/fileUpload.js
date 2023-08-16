@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", function(){
     const fileUploads = document.getElementsByClassName("fileUpload");
     const fileEl = document.getElementById("file");
 
-    for (const el of fileUpload){
+    for (const el of fileUploads){
         el.addEventListener("click", function(){
             fileEl.click();
         });
